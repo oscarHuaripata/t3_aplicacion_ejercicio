@@ -1,0 +1,30 @@
+﻿@{
+    List<Rutina> accounts = ((List<Rutina>)Model); // forma B
+}
+
+<h1>Rutinas</h1>
+
+<a href="/rutina/create">Crear Rutina</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in accounts)
+        {            
+            <tr>
+                <td>@item.TipoRutina.Nombre</td>
+                <td>@item.Nombre</td>
+                <td>
+                    <a href="/ejercicio/Index?rutinaId=@item.RutinaId">Ejercicios</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

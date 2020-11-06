@@ -1,0 +1,33 @@
+﻿@{ 
+    var account = (Rutina)Model;
+}
+
+    <h1>Crear Rutina</h1>
+
+    
+    <form action="/rutina/create" enctype="multipart/form-data" method="post">
+
+        @*<input type="file" name="Image" />
+        <br />*@
+        <label>
+            Tipo
+        </label>
+        <br />
+         <select name="TipoRutinaId">
+            <option value="">-- Selecciona una opción --</option>
+            @foreach(var item in ViewBag.Types)
+            {
+                <option value="@item.Id">@item.Nombre</option>
+            }
+        </select>
+        <br />
+        <br />
+        <label>Nombre</label>
+        <br />
+        <input name="Nombre" />
+        @Html.ValidationMessage("Nombre")
+        <br />
+        <br />
+        <button>Guardar</button>
+
+    </form>

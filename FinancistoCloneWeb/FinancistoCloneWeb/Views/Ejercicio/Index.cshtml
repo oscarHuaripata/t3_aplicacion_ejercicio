@@ -1,0 +1,35 @@
+﻿@{ 
+    var items = (List<RutinaEjercicio>)Model;
+    var rutima = (Rutina)ViewBag.Rutina;
+}
+
+    <h2>Ejercicios de  @rutima.Nombre</h2>
+
+    <div class="row">
+        <div class="col">
+            <div class="clearfix">
+                <br />
+                <table class="table mt-2">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Duracion</th>
+                        <th>Nombre</th>
+                        <th>Enlace</th>
+                        <th></th>  
+                    </tr>
+                    @foreach (var item in items)
+                    {
+                        <tr>
+                            <td>@item.Rutina.TipoRutina.Nombre</td>
+                            <td>@item.duracion</td>
+                            <td>@item.Ejercicio.Nombre</td>
+                            <td>@item.Ejercicio.Link</td>
+                            <td>
+                                <a href="@item.Ejercicio.Link" target="_blank">Ver</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            </div>
+    </div>
